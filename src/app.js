@@ -1,4 +1,9 @@
-const express = requeire('express');
+require('dotenv').config({
+    // Se eu tiver uma variavel Node_env == a test, buscarei o .env.test, senao, busco o env de desenvolvimento
+    path: process.env.NODE_ENV === "test" ? '.env.test' : '.env'
+})
+
+const express = require('express');
 
 class AppController {
     constructor(){
